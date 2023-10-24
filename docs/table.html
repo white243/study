@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>テーブル 行入れ替え</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        thead>tr>th {
+            background-color: #696866 !important;
+            color: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* マウスを合わせたときのカーソルスタイルを変更 */
+
+        tbody>tr:hover {
+            cursor: pointer;
+            /* ここでは「ポインター」カーソルを使用 */
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>ヘッダー1</th>
+                <th>ヘッダー2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="draggable">
+                <td>行1, セル1</td>
+                <td>行1, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行2, セル1</td>
+                <td>行2, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行3, セル1</td>
+                <td>行3, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行4, セル1</td>
+                <td>行4, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行5, セル1</td>
+                <td>行5, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行6, セル1</td>
+                <td>行6, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行7, セル1</td>
+                <td>行7, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行8, セル1</td>
+                <td>行8, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行9, セル1</td>
+                <td>行9, セル2</td>
+            </tr>
+            <tr class="draggable">
+                <td>行10, セル1</td>
+                <td>行10, セル2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myTable").sortable({
+                items: "tr.draggable",
+                axis: "y"
+            });
+        });
+    </script>
+</body>
+
+</html>
